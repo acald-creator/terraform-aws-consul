@@ -106,9 +106,9 @@ resource "aws_launch_configuration" "consul_servers" {
   associate_public_ip_address = var.public_ip
   iam_instance_profile        = aws_iam_instance_profile.instance_profile.name
   root_block_device {
-    volume_type = "io1"
+    volume_type = "gp3"
     volume_size = 50
-    iops        = "2500"
+#    iops        = "2500"
   }
 
   lifecycle {
